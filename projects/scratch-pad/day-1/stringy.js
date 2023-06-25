@@ -60,10 +60,12 @@ return string.toUpperCase()
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 //return string with a dash in it
-var newString = string.toLowerCase();
-newString.join;
-
-return newString
+var lwrString = string.toLowerCase();
+var splString = lwrString.split(' ');
+  console.log(splString)
+  var newString = splString.join('-')
+  console.log(newString)
+  return newString
 
 
     // YOUR CODE ABOVE HERE //
@@ -83,8 +85,15 @@ return newString
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-    
+//IF fist letter and single letter match print true
+if (char.toLowerCase() === string[0].toLowerCase()){
+    console.log(true)
+    return true
+}
+//if not print false
+    else{console.log(false)
+        return false
+    }
 
     // YOUR CODE ABOVE HERE //
 }
@@ -103,7 +112,15 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+    var lastLetter = string[string.length - 1]
+    if (char.toLowerCase() === lastLetter.toLowerCase()){
+        console.log(true)
+        return true
+    }
+    //if not print false
+        else{console.log(false)
+            return false
+        }
 
 
     // YOUR CODE ABOVE HERE //
@@ -117,7 +134,7 @@ function endsWith(string, char) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+return stringOne + stringTwo
 
     // YOUR CODE ABOVE HERE //
 }
@@ -135,7 +152,7 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+return args.join('')
 
     // YOUR CODE ABOVE HERE //
 }
@@ -151,7 +168,12 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+if ( stringOne.length > stringTwo.length){
+    return stringOne;
+}
+else {
+    return stringTwo
+}
 
 
     // YOUR CODE ABOVE HERE //
@@ -166,7 +188,7 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+if ()
 
 
     // YOUR CODE ABOVE HERE //
