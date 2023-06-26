@@ -188,7 +188,14 @@ else {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-if ()
+if (stringOne > stringTwo){
+    return -1
+}
+if (stringOne < stringTwo){
+    return 1
+}
+else {return 0
+}
 
 
     // YOUR CODE ABOVE HERE //
@@ -205,7 +212,14 @@ if ()
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+    if (stringOne > stringTwo){
+        return 1
+    }
+    if (stringOne < stringTwo){
+        return -1
+    }
+    else {return 0
+    }
 
 
     // YOUR CODE ABOVE HERE //
