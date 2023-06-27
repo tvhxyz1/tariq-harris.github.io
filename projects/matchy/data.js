@@ -67,14 +67,27 @@ console.log(animals);
 var duck = { species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] };
 animals.push(duck);
 console.log(animals);
-
+var horse = { species: 'horse', name: 'Ed', noises: ['hi', 'Bye']};
+animals.push(horse);
+console.log(animals);
+var pig = { species: 'pig', name: 'porky', noises:['oink', 'oink']};
+animals.push(pig)
+console.log(animals)
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+// arrays are the best place to store list.
+var friends = [];
+function getRandom(arr){
+return Math.floor(Math.random() * arr.length);
+};
+var friendly = getRandom(animals);
+friends.push(animals[friendly].name);
+console.log(friends);
+animals[0]['friends'] = friends;
+console.log(animals)
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
