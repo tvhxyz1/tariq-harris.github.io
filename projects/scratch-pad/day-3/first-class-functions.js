@@ -45,12 +45,11 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    return function(start){
-        var a = start;
-         if(a === startsWith){
-            return true
-         }
-    }
+ console.log(startsWith)
+ return function(str){
+   
+    return str[0].toUpperCase() === startsWith.toUpperCase()
+ }
     
     
     
@@ -62,10 +61,12 @@ function createStartsWithFilter(startsWith) {
  * Function that tests whether a given String ends with the endsWith 
  * character.
  */
-function createEndsWithFilter(endsWith) {
+function createEndsWithFilter(endsWith){ 
     // YOUR CODE BELOW HERE //
-    
-    
+    return function(str){
+ 
+        return str[str.length - 1].toUpperCase() === endsWith.toUpperCase()
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -81,8 +82,11 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    var coll = [];
+    for (var i = 0; i < strings.length; i++){
+        coll.push(modify(strings[i]));
+    }
+    return coll
     
     // YOUR CODE ABOVE HERE //
 }
@@ -99,12 +103,17 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
-    
-    
-    
+    //return boolean
+    //retuen true if all strings pass
+
+    for(var i = 0;i < strings.length; i++){
+        if(test(strings[i]) !== true){
+            return false
+        } 
     // YOUR CODE ABOVE HERE //
 }
-
+return true
+}
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
     (typeof process.versions.node !== 'undefined')) {

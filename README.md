@@ -5,9 +5,9 @@
 1) Complete Todos 2-5
 
 # Git Commands
-1) In terminal, type => git add -A
-2) In terminal, type => git 
-3) In terminal, type => git push
+1) In terminal, git add -A
+In terminal, type => git commit -m "description"
+In terminal, type => git push
 
 # How to Install Projects Using os install
 1) In terminal, type = code ~/.bashrc

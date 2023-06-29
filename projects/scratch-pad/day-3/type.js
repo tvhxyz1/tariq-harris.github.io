@@ -36,12 +36,15 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    if (isArray(value)){
+      if (Array.isArray(value)){
         return false
-       }
-       else if (typeOf new Date()){
-        return false 
-       }
+      }else if (value === null){
+        return false
+      }else if (value instanceof Date){
+        return false
+      }else {return typeof value === 'object'}
+        
+      
     
     
     
@@ -56,7 +59,13 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+    if (Array.isArray(value)){
+        return true
+      }else if (value === null){
+        return false
+      }else if (value instanceof Date){
+        return false
+      }else {return typeof value === 'object'}
     
     
     
@@ -67,7 +76,7 @@ function isCollection(value) {
  * Given an input value, return the type of the value as a String
  * 
  * Types are one of: 
- *    - "string"
+ *   - "string"
  *    - "array"
  *    - "object"
  *    - "undefined"
@@ -84,8 +93,23 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+    if (Array.isArray(value)){
+      return 'array';
+    }else if (value === null){
+      return 'null'
+    }else if (value instanceof Date){
+      return 'date'
+    }else if (typeof value === 'object'){
+return 'object';
+    }else if (typeof value === 'string'){
+      return 'string';
+    }else if (typeof value === 'number'){
+      return 'number'
+    }else if (typeof value === 'undefined'){
+      return undefined
+    }else if (typeof value === 'boolean'){
+      return 'boolean'
+    }else {return 'function'}
     
     
     // YOUR CODE ABOVE HERE //
