@@ -105,17 +105,19 @@ function profileInfo(object) {
 // if there are no noises return 'there are no noises'
 function maybeNoises(object) {
 
-    if(object === object.noises){
+    if(Array.isArray(object.noises) && object.noises.length > 0){
     return object.noises.join(' ')
-}
+}else{
 return 'there are no noises'
+}
 }
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+    const words = string.split(' ');
+    return words.includes(word);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -123,7 +125,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+object.friends.push(name);
+return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -131,25 +134,37 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    if (object.hasOwnProperty('friends') && Array.isArray(object.friends)) {
+        return object.friends.includes(name);
+}else {return false}
 }
-
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+    var notFriends = [];
 
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].name !== name && (!array[i].friends || !array[i].friends.includes(name))) {
+      notFriends.push(array[i].name);
+    }
+  }
+
+  return notFriends;
 }
+    
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//Should take an object, a key and a value. Should update the property <key> on <object> with new <value>
+//. If <key> does not exist on <object> create it.
 function updateObject(object, key, value) {
-
+    if (object.key !== object.key) {
+       return  object['key'] = value;
+      }
 }
-
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
