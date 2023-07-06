@@ -161,16 +161,23 @@ function nonFriends(name, array) {
 //Should take an object, a key and a value. Should update the property <key> on <object> with new <value>
 //. If <key> does not exist on <object> create it.
 function updateObject(object, key, value) {
-    if (object.key !== object.key) {
-       return  object['key'] = value;
+   
+    object[key] = value;
+    return object;
+   
       }
-}
+
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+  for (let i = 0; i < array.length; i++) {
+    const property = array[i];
+    if (object.hasOwnProperty(property)) {
+      delete object[property];
+}
+  }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -178,7 +185,7 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+  return [...new Set(array)];
 }
 
 //////////////////////////////////////////////////////////////////////

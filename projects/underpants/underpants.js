@@ -342,7 +342,21 @@ _.indexOf = function(array, value){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
-
+_.reduce = function(array, func, seed){
+    let result;
+    if(seed === undefined){
+        result = array[0];
+        for(var i = 0; i <array.length;i++){
+            result = func(result, array[i], i, array);
+        }
+    }else{
+        result = seed;
+        for(var i = 0;i < array.length; i++){
+            result = func(result, array[i], i, array);
+        }
+    }
+    return result
+}
 
 /** _.extend
 * Arguments:
