@@ -146,7 +146,15 @@ _.last = function(array, number){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-
+_.indexOf = function(array, value){
+    if(value === array){
+        for(var i = 0; i < array.length; i++){
+            return array[i] + value
+        }
+    }else if (value !== array){
+        return -1
+    }
+}
 
 /** _.contains
 * Arguments:
